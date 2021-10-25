@@ -1,11 +1,11 @@
-// Import the functions you need from the SDKs you need
-// import { initializeApp } from "firebase/app";
+import firebase from 'firebase';
 
 const firebaseConfig = {
-  apiKey: REACT_APP_FIREBASE_API_KEY,
-  authDomain: REACT_APP_FIREBASE_AUTH_DOMAIN ,
-  projectId: REACT_APP_FIREBASE_PROJECTID  
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECTID,  
+  databaseURL: process.env.REACT_APP_FIREBASE_DB_URL,
 };
 
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+const firebaseApp = firebase.initializeApp(firebaseConfig);
+export default firebaseApp;
